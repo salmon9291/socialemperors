@@ -1,137 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<!-- Meta -->
-		<meta charset="utf-8"/>
-		<!-- Title and Icon -->
-		<title id="pageTitle">Social Empires</title>
-		<link rel="shortcut icon" href="/img/icon.gif"/>
-		<link rel="icon" type="image/png" href="/img/icon.gif"/>
-		<script src="/js/external_interface.js"></script>
-	</head>
-	<body style="font-family: 'lucida grande',tahoma,verdana,arial,sans-serif">
-	<center>
-		<!-- SESSION HEADER -->
-		<div id="header" style="width: 760px; margin-top: 50px;">
-			<div id="session" style="float: right;">
-				<p style="display:inline">Logged in as <b>{{save_info.name}}</b> lvl {{save_info.level}} (<a href="/">logout</a>)</p>
-			</div>
-		</div>
-		<br>
-		<!-- GAME BAR -->
-		<div id="gameBar" style="margin-top: 15px;">
-			<!-- GAME BAR TOP -->
-			<div id="gamebar_top" style="width: 760px; height: 90px;">
-				<div style="float: left; margin-left:155px; padding: 4px; font-size: 10pt">
-					<!-- VERSION -->
-					<br><br><br>
-					<p style="display: inline">{{ version }}</p>
-				</div>
-			</div>
-			<!-- GAME BAR BUTTONS -->
-			<div id="gamebar_buttons" style="width: 760px;">
-				&nbsp;
-				<a class="gameBarButton" href="#"><div><img src="/img/gift.png">Free Gifts</div></a>
-				<a class="gameBarButton gameBarButtonSelected" href="#"><div><img>Play</div></a>
-				<a class="gameBarButton" href="#"><div><img src="/img/cash.png">Get Cash</div></a>
-				<a class="gameBarButton" href="https://discord.gg/zW5gSbQJBw" target="_blank"><div><img src="/img/discord.png">Discord</div></a>
-				<a class="gameBarButton" href="https://github.com/AcidCaos/socialemperors#readme" target="_blank"><div><img src="/img/github.png">GitHub</div></a>
-			</div>
-			<style>
-				#gameBar {
-					text-align: left;
-					width: 760px;
-					margin-bottom: 0px;
-					padding: 0px;
-					background-color:rgb(137, 187, 15);
-					background-image: url('img/Gamebar_byTrevo.png');
-					background-repeat: no-repeat;
-					background-size: contain;
-					border-bottom: solid #6e5335 3px;
-				}
-				.gameBarButton {
-					display: inline-block;
-					height: 19px;
-					color: black;
-					border: solid 1.5px;
-					border-color: #9e7747;
-					background-color:rgb(255, 245, 131);
-					border-top-left-radius: 5px;
-					border-top-right-radius: 5px;
-					cursor: pointer;
-					text-decoration: none;
-					font-size: 11pt;
-					padding: 2px 3px 1px 3px; 
-				}
+<html lang="es">
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <!-- Title and Icon -->
+    <title id="pageTitle">Social Empires - Jugando</title>
+    <link rel="shortcut icon" href="/img/icon.gif"/>
+    <link rel="icon" type="image/png" href="/img/icon.gif"/>
+    <script src="/js/external_interface.js"></script>
 
-				.gameBarButtonSelected {
-					background-color:rgb(233, 221, 81);
-				}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-				.gameBarButton img {
-					height: 17px;
-					padding-right: 3px;
-					vertical-align: middle;
-				}
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #669C2C;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-				.gameBarButton:hover {
-					background-color:rgb(250, 237, 90);
-					text-decoration: none;
-				}
+        /* BARRA FLOTANTE (BOTÓN DE CERRAR SESIÓN) */
+        .top-navbar {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+        }
 
-				.gameBarButtonSelected:hover {
-					background-color:rgb(223, 212, 82);
-				}
+        .logout-btn {
+            background-color: rgba(211, 47, 47, 0.9);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            transition: background-color 0.3s, transform 0.1s;
+            backdrop-filter: blur(4px);
+        }
 
-			</style>
-		</div>
-		<!-- EMBED GAME -->
-		<object>
-			<embed
-				src="http://{{SERVERIP}}:{{PORT}}/default01.static.socialpointgames.com/static/socialempires/flash/SELoader.swf?swftoload=http://{{SERVERIP}}:{{PORT}}/default01.static.socialpointgames.com/static/socialempires/flash/{{GAMEVERSION}}" 
-				allowFullScreen="true" bgcolor="#669C2C" quality=high WIDTH="760" HEIGHT="600" NAME="se" ALIGN=""
-				TYPE="application/x-shockwave-flash" PLUGINSPAGE="http://www.macromedia.com/go/getflashplayer"
-				flashvars='spdebug=notnull&brk=0
-				&staticUrl=http://{{SERVERIP}}:{{PORT}}/default01.static.socialpointgames.com/static/socialempires/&brk=0
-				&dynamicUrl=http://{{SERVERIP}}:{{PORT}}/dynamic.flash1.dev.socialpoint.es/appsfb/socialempiresdev/srvempires/&brk=0
-				&skiphash12341=notnull&brk=0
-				&fb_sig_user={{save_info.userid}}&brk=0
-				&user_key=123456789&brk=0
-				&language=en&brk=0
-				&accessToken=AAABbZAm0wdMUBALsOrR0Ho68CLjaOT8SV3vftKg9mbo1zZColaW5FljRVaLxPGxXXnm1M98mTZCAttcQ4GHwvSyXfsyxYmvKMH8Hmn5iliSPnjvIsZA6&brk=0
-				&sex=m&brk=0
-				&lastLoggedIn={{save_info.last_logged_in}}&brk=0
-				&dailyBonus=0&brk=0
-				&friendsInfo={{friendsInfo | tojson}}&brk=0
-				&serverTime={{serverTime}}&brk=0
-				&forceSyncError=1&brk=0
-				&forceAttackReload=0&brk=0
-				&forceQuestReload=0&brk=0
-				&mantenimiento=N&brk=0
-				&fb_sig_friends=&brk=0
-				&debugResources=1&brk=0
-				&bookmarked=&brk=0
-				&publishActions=1&brk=0
-				&like=0&brk=0
-				&lastInviteSend=0&brk=0
-				&recentRequests=%7B%7D&brk=0
-				&goldmember=0&brk=0
-				&sp_ref_cat=unknown&brk=0
-				&daysSinceRegistration=0&brk=0
-				&push_time=30&brk=0
-				&gamecrosspromo=DCI&brk=0
-				&adVideo=0&brk=0
-				&timeZone=0&brk=0
-				&showInitialInvite=false&brk=0
-				&game_status=3024-lev&brk=0
-				{% if offers %}&offer_type=0&brk=0
-				&offerBuildingTracking=false&brk=0
-				&offerBuilding=false&brk=0
-				{% endif %}&squirrel=0&brk=0
-				&inviteTournament=0&brk=0
-				&canvasaddress=http%3A%2F%2F{{SERVERIP}}%3A{{PORT}}%2Fplay&brk=0'>
-			</embed>
-		</object>
-	</center>
-	</body>
+        .logout-btn:hover {
+            background-color: #b71c1c;
+            transform: scale(1.05);
+        }
+
+        /* CONTENEDOR FLASH PANTALLA COMPLETA SIN ESTIRAR */
+        .flash-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #669C2C;
+        }
+
+        .game-box {
+            aspect-ratio: 760 / 600;
+            width: 100%;
+            height: 100%;
+            max-width: calc(100vh * (760 / 600));
+            max-height: calc(100vw * (600 / 760));
+            display: flex;
+        }
+
+        object, embed {
+            width: 100% !important;
+            height: 100% !important;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BOTÓN CERRAR SESIÓN FLOTANTE -->
+    <div class="top-navbar">
+        <a href="/" class="logout-btn">Cerrar sesión</a>
+    </div>
+
+    <!-- EMBED FLASH JUEGO NATIVO -->
+    <div class="flash-container">
+        <div class="game-box">
+            <object id="se" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="100%">
+                <param name="movie" value="http://{{SERVERIP}}:{{PORT}}/default01.static.socialpointgames.com/static/socialempires/flash/SELoader.swf?swftoload=http://{{SERVERIP}}:{{PORT}}/default01.static.socialpointgames.com/static/socialempires/flash/{{GAMEVERSION}}" />
+                <param name="allowFullScreen" value="true" />
+                <param name="quality" value="high" />
+                <param name="bgcolor" value="#669C2C" />
+                <param name="scale" value="showall" />
+                <param name="wmode" value="opaque" />
+                <embed
+                    src="http://{{SERVERIP}}:{{PORT}}/default01.static.socialpointgames.com/static/socialempires/flash/SELoader.swf?swftoload=http://{{SERVERIP}}:{{PORT}}/default01.static.socialpointgames.com/static/socialempires/flash/{{GAMEVERSION}}" 
+                    allowFullScreen="true"
+                    bgcolor="#669C2C"
+                    quality="high"
+                    scale="showall"
+                    wmode="opaque"
+                    width="100%"
+                    height="100%"
+                    name="se"
+                    type="application/x-shockwave-flash"
+                    pluginspage="http://www.macromedia.com/go/getflashplayer"
+                    flashvars='spdebug=notnull&brk=0
+                    &staticUrl=http://{{SERVERIP}}:{{PORT}}/default01.static.socialpointgames.com/static/socialempires/&brk=0
+                    &dynamicUrl=http://{{SERVERIP}}:{{PORT}}/dynamic.flash1.dev.socialpoint.es/appsfb/socialempiresdev/srvempires/&brk=0
+                    &skiphash12341=notnull&brk=0
+                    &fb_sig_user={{save_info.userid}}&brk=0
+                    &user_key=123456789&brk=0
+                    &language=en&brk=0
+                    &accessToken=AAABbZAm0wdMUBALsOrR0Ho68CLjaOT8SV3vftKg9mbo1zZColaW5FljRVaLxPGxXXnm1M98mTZCAttcQ4GHwvSyXfsyxYmvKMH8Hmn5iliSPnjvIsZA6&brk=0
+                    &sex=m&brk=0
+                    &lastLoggedIn={{save_info.last_logged_in}}&brk=0
+                    &dailyBonus=0&brk=0
+                    &friendsInfo={{friendsInfo | tojson}}&brk=0
+                    &serverTime={{serverTime}}&brk=0
+                    &forceSyncError=1&brk=0
+                    &forceAttackReload=0&brk=0
+                    &forceQuestReload=0&brk=0
+                    &mantenimiento=N&brk=0
+                    &fb_sig_friends=&brk=0
+                    &debugResources=1&brk=0
+                    &bookmarked=&brk=0
+                    &publishActions=1&brk=0
+                    &like=0&brk=0
+                    &lastInviteSend=0&brk=0
+                    &recentRequests=%7B%7D&brk=0
+                    &goldmember=0&brk=0
+                    &sp_ref_cat=unknown&brk=0
+                    &daysSinceRegistration=0&brk=0
+                    &push_time=30&brk=0
+                    &gamecrosspromo=DCI&brk=0
+                    &adVideo=0&brk=0
+                    &timeZone=0&brk=0
+                    &showInitialInvite=false&brk=0
+                    &game_status=3024-lev&brk=0
+                    {% if offers %}&offer_type=0&brk=0
+                    &offerBuildingTracking=false&brk=0
+                    &offerBuilding=false&brk=0
+                    {% endif %}&squirrel=0&brk=0
+                    &inviteTournament=0&brk=0
+                    &canvasaddress=http%3A%2F%2F{{SERVERIP}}%3A{{PORT}}%2Fplay&brk=0'>
+                </embed>
+            </object>
+        </div>
+    </div>
+</body>
 </html>

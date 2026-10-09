@@ -1,81 +1,72 @@
 {
-	"server": 
-	{
-		"ip":								"127.0.0.1",
-		"port":								5050,
-		"write_logs":						false,
-		"allow_save_reloading":				false
-	},
-	"pvp": 
-	{
-		"shield_hours_after_attack_pvp":	12,
-		"shield_hours_after_attack_pve":	12,
-		"shield_allow_original_bug":		true,
-		"allow_shield_stacking":			false,
-		"resource_stealing_enabled":		true,
-		"resource_regeneration_hours":		48,
-		"time_limit_minutes":				7,
-		"resource_cap_multiplier":			25,
-		"search": 
-		{
-			"max_attempts":					2200,
-			"attempts_before_expanding":	200,
-			"level_range":					10
-		}
-	},
-	"shop":
-	{
-		"rotation_hours":					48,
-		"max_factions":						2,
-		"max_items_full_random":			80,
-		"full_random":						false,
-		"spooktober":						true,
-		"always_enabled": 
-		[
-
-		]
-	},
-	"misc": 
-	{
-		"daily_bonus_repeatable":			false,
-		"quests_reset_hours":				6,
-		"graveyard_max_slots":				10000,
-		"graveyard_max_each_unit":			100,
-		"graveyard_potions_per_friend":		1,
-		"banned_items":						[],
-		"assign_random_avatars":			false
-	},
-	"events": 
-	[
-		{
-			"event":						"EASTER_DRAGON",
-			"active":						false,
-			"date":							"10-20-2025",
-			"days":							7
-		},
-		{
-			"event":						"HELL_FORGE_ISLAND",
-			"active":						true,
-			"date":							"10-20-2025",
-			"days":							7
-		},
-		{
-			"event":						"IVORY_CHALLENGE",
-			"active":						false,
-			"date":							"10-20-2025",
-			"days":							7
-		},
-		{
-			"event":						"IVORY_CHALLENGE_DUPLICATE",
-			"active":						false,
-			"date":							"12-30-1970",
-			"days":							0
-		},
-		{
-			"event":						"NIGHT_FORGE",
-			"active":						false,
-			"date":							"10-20-2025",
-			"days":							7
-		}
-	]
+    "server": {
+        "ip": "169.58.149.57",
+        "port": 5050,
+        "write_logs": false,
+        "allow_save_reloading": false
+    },
+    "pvp": {
+        "shield_hours_after_attack_pvp": 12,
+        "shield_hours_after_attack_pve": 12,
+        "shield_allow_original_bug": true,
+        "allow_shield_stacking": false,
+        "resource_stealing_enabled": true,
+        "resource_regeneration_hours": 48,
+        "time_limit_minutes": 7,
+        "resource_cap_multiplier": 25,
+        "search": {
+            "max_attempts": 2200,
+            "attempts_before_expanding": 200,
+            "level_range": 10
+        }
+    },
+    "shop": {
+        "rotation_hours": 48,
+        "max_factions": 2,
+        "max_items_full_random": 80,
+        "full_random": false,
+        "spooktober": true,
+        "always_enabled": []
+    },
+    "misc": {
+        "daily_bonus_repeatable": false,
+        "quests_reset_hours": 6,
+        "graveyard_max_slots": 10000,
+        "graveyard_max_each_unit": 100,
+        "graveyard_potions_per_friend": 1,
+        "banned_items": [],
+        "assign_random_avatars": false
+    },
+    "events": [
+        {
+            "event": "EASTER_DRAGON",
+            "active": false,
+            "date": "10-20-2025",
+            "days": 7
+        },
+        {
+            "event": "HELL_FORGE_ISLAND",
+            "active": true,
+            "date": "10-20-2025",
+            "days": 7
+        },
+        {
+            "event": "IVORY_CHALLENGE",
+            "active": false,
+            "date": "10-20-2025",
+            "days": 7
+        },
+        {
+            "event": "IVORY_CHALLENGE_DUPLICATE",
+            "active": false,
+            "date": "12-30-1970",
+            "days": 0
+        },
+        {
+            "event": "NIGHT_FORGE",
+            "active": false,
+            "date": "10-20-2025",
+            "days": 7
+        }
+    ]
 }

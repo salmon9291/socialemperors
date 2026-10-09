@@ -3,8 +3,8 @@
 		"pid": "initial",
 		"name": "Emperor",
 		"pic": "",
-		"cash": 20,
-		"completed_tutorial": 0,
+		"cash": 200,
+		"completed_tutorial": 1,
 		"default_map": 0,
 		"map_names": [
 			"My Empire"
@@ -29,7 +29,7 @@
 			],
 			"timestamp": 0,
 			"coins": 250,
-			"xp": 4,
+			"xp": 5000,
 			"level": 1,
 			"stone": 250,
 			"wood": 850,
