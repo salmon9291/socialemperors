@@ -48,9 +48,7 @@ from server_config import get_server_config
 
 # IP MODIFICADA SEGUN TU SOLICITUD
 host = "169.58.149.57"
-port = get_server_config()["server"]["port"]
-if get_server_config()["server"]["write_logs"]:
-	_logging_setup(logging.FileHandler(_logging_filename(), mode='a'))
+port = 5050
 
 # --------------------------------------------------------------------------------------------------------------
 

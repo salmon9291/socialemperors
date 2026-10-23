@@ -180,9 +180,516 @@
             }
         }
     </style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5756611551910131" crossorigin="anonymous"></script>
+
+<style>
+    /* Forzar modo oscuro absoluto y paleta Retro Point */
+    body, html {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    }
+    header, nav, .navbar, .top-bar {
+        background-color: #0d1321 !important;
+        border-bottom: 1px solid #1e293b !important;
+    }
+    h1, h2, h3, h4, h5, h6, p, span, label, div {
+        color: #ffffff !important;
+    }
+    .text-muted, small, .subtitle {
+        color: #94a3b8 !important;
+    }
+    /* Tarjetas y contenedores */
+    .card, .panel, .box, .container, .modal-content {
+        background-color: #111827 !important;
+        border: 1px solid #1e293b !important;
+    }
+    /* Inputs, selects y áreas de texto oscuras */
+    input[type='text'], input[type='email'], input[type='password'], select, textarea {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        border: 1px solid #1e293b !important;
+    }
+    input::placeholder, textarea::placeholder {
+        color: #64748b !important;
+    }
+    input:focus, select:focus, textarea:focus {
+        border-color: #ff2a4b !important;
+        outline: none !important;
+    }
+    /* Botones principales en rojo carmesí */
+    button, input[type='submit'], .btn, .btn-primary, .btn-warning {
+        background-color: #ff2a4b !important;
+        background-image: none !important;
+        color: #ffffff !important;
+        border: none !important;
+        font-weight: 700 !important;
+    }
+    button:hover, input[type='submit']:hover, .btn:hover, .btn-primary:hover, .btn-warning:hover {
+        background-color: #e01e3d !important;
+    }
+    a {
+        color: #ff2a4b !important;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+<style>
+    /* Forzar modo oscuro absoluto y paleta Retro Point */
+    body, html {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    }
+    header, nav, .navbar, .top-bar {
+        background-color: #0d1321 !important;
+        border-bottom: 1px solid #1e293b !important;
+    }
+    h1, h2, h3, h4, h5, h6, p, span, label, div {
+        color: #ffffff !important;
+    }
+    .text-muted, small, .subtitle {
+        color: #94a3b8 !important;
+    }
+    /* Tarjetas y contenedores */
+    .card, .panel, .box, .container, .modal-content {
+        background-color: #111827 !important;
+        border: 1px solid #1e293b !important;
+    }
+    /* Inputs, selects y áreas de texto oscuras (Corrección de Contraste) */
+    input[type='text'], input[type='email'], input[type='password'], select, textarea {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        border: 1px solid #1e293b !important;
+    }
+    input::placeholder, textarea::placeholder {
+        color: #64748b !important;
+    }
+    input:focus, select:focus, textarea:focus {
+        border-color: #ff2a4b !important;
+        outline: none !important;
+    }
+    /* Botones principales en rojo carmesí */
+    button, input[type='submit'], .btn, .btn-primary, .btn-warning {
+        background-color: #ff2a4b !important;
+        background-image: none !important;
+        color: #ffffff !important;
+        border: none !important;
+        font-weight: 700 !important;
+    }
+    button:hover, input[type='submit']:hover, .btn:hover, .btn-primary:hover, .btn-warning:hover {
+        background-color: #e01e3d !important;
+    }
+    /* Botón Cerrar sesión (específico) */
+    #logout-button, a[href*="logout"] {
+        background-color: #ff2a4b !important;
+        color: #ffffff !important;
+    }
+    #logout-button:hover, a[href*="logout"]:hover {
+        background-color: #e01e3d !important;
+    }
+    a {
+        color: #ff2a4b !important;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    /* Forzar que el logotipo de Social Empires sea oscuro */
+    img[src*="logo"], .logo-img {
+        filter: brightness(0.7) contrast(1.2) !important;
+    }
+</style>
+
+
+<style>
+    /* 1. Fondo oscuro global de Retro Point */
+    body, html {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        font-family: system-ui, -apple-system, sans-serif !important;
+    }
+
+    /* 2. Ocultar o adaptar el panel/fondo verde brillante original */
+    .left-panel, .hero-section, div[class*="left"], div[class*="bg-"] {
+        background-color: #090d16 !important;
+    }
+
+    /* 3. Panel de formulario en tono oscuro */
+    .login-box, .form-container, .card, .panel, main, div[class*="right"], div[class*="form"] {
+        background-color: #111827 !important;
+        color: #ffffff !important;
+    }
+
+    /* 4. Textos legibles en blanco y gris suave */
+    h1, h2, h3, h4, h5, h6, label, p, span, div, td, th {
+        color: #ffffff !important;
+    }
+    .text-muted, small, p[style*="color"] {
+        color: #94a3b8 !important;
+    }
+
+    /* 5. Inputs y Selects oscuros con texto blanco nítido */
+    input[type='text'], input[type='email'], input[type='password'], select, textarea {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        border: 1px solid #1e293b !important;
+        border-radius: 6px !important;
+        padding: 10px !important;
+    }
+    input::placeholder {
+        color: #64748b !important;
+    }
+    input:focus, select:focus {
+        border-color: #ff2a4b !important;
+        outline: none !important;
+    }
+
+    /* 6. Botones principales en rojo carmesí de Retro Point */
+    button, input[type='submit'], .btn, .btn-primary, .btn-warning {
+        background-color: #ff2a4b !important;
+        background-image: none !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 6px !important;
+        font-weight: 700 !important;
+        box-shadow: none !important;
+    }
+    button:hover, input[type='submit']:hover, .btn:hover, .btn-primary:hover, .btn-warning:hover {
+        background-color: #e01e3d !important;
+    }
+
+    /* 7. Enlaces */
+    a {
+        color: #ff2a4b !important;
+    }
+</style>
+
+
+<style>
+    /* Fondo general oscuro */
+    body, html {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        font-family: system-ui, -apple-system, sans-serif !important;
+    }
+    /* Panel izquierdo con la imagen CESPED.jpg */
+    .left-panel, .hero-section, div[class*="left"], div[class*="banner"], div[class*="side"] {
+        background-image: url('https://raw.githubusercontent.com/AcidCaos/socialemperors/main/assets/images_new/CESPED.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+    /* Panel de formulario derecho */
+    .login-box, .form-container, .card, .panel, div[class*="right"], div[class*="form"] {
+        background-color: #111827 !important;
+        color: #ffffff !important;
+        border: 1px solid #1e293b !important;
+    }
+    /* Textos claros y legibles */
+    h1, h2, h3, h4, h5, h6, label, p, span, div {
+        color: #ffffff !important;
+    }
+    .text-muted, small {
+        color: #94a3b8 !important;
+    }
+    /* Inputs y selects oscuros nítidos */
+    input[type='text'], input[type='email'], input[type='password'], select, textarea {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        border: 1px solid #1e293b !important;
+        border-radius: 6px !important;
+        padding: 10px !important;
+    }
+    input::placeholder {
+        color: #64748b !important;
+    }
+    input:focus, select:focus {
+        border-color: #ff2a4b !important;
+        outline: none !important;
+    }
+    /* Botones principales en rojo carmesí */
+    button, input[type='submit'], .btn, .btn-primary {
+        background-color: #ff2a4b !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 6px !important;
+        font-weight: 700 !important;
+    }
+    button:hover, input[type='submit']:hover, .btn:hover {
+        background-color: #e01e3d !important;
+    }
+    a {
+        color: #ff2a4b !important;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+<style>
+    /* Fondo general oscuro */
+    body, html {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        font-family: system-ui, -apple-system, sans-serif !important;
+    }
+    /* Panel izquierdo con la imagen CESPED.jpg */
+    .left-panel, .hero-section, div[class*="left"], div[class*="banner"], div[class*="side"] {
+        background-image: url('https://raw.githubusercontent.com/AcidCaos/socialemperors/main/assets/images_new/CESPED.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+    /* Panel de formulario derecho */
+    .login-box, .form-container, .card, .panel, div[class*="right"], div[class*="form"] {
+        background-color: #111827 !important;
+        color: #ffffff !important;
+        border: 1px solid #1e293b !important;
+    }
+    /* Textos claros y legibles */
+    h1, h2, h3, h4, h5, h6, label, p, span, div {
+        color: #ffffff !important;
+    }
+    .text-muted, small {
+        color: #94a3b8 !important;
+    }
+    /* Inputs y selects oscuros nítidos */
+    input[type='text'], input[type='email'], input[type='password'], select, textarea {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        border: 1px solid #1e293b !important;
+        border-radius: 6px !important;
+        padding: 10px !important;
+    }
+    input::placeholder {
+        color: #64748b !important;
+    }
+    input:focus, select:focus {
+        border-color: #ff2a4b !important;
+        outline: none !important;
+    }
+    /* Botones principales en rojo carmesí */
+    button, input[type='submit'], .btn, .btn-primary {
+        background-color: #ff2a4b !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 6px !important;
+        font-weight: 700 !important;
+    }
+    button:hover, input[type='submit']:hover, .btn:hover {
+        background-color: #e01e3d !important;
+    }
+    a {
+        color: #ff2a4b !important;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+<style>
+    body, html {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        font-family: system-ui, -apple-system, sans-serif !important;
+        margin: 0;
+        padding: 0;
+    }
+    /* Panel izquierdo con CESPED.jpg sin bordes extraños */
+    .left-panel, .hero-section, div[class*="left"], div[class*="banner"] {
+        background-image: url('https://raw.githubusercontent.com/AcidCaos/socialemperors/main/assets/images_new/CESPED.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+        border: none !important;
+    }
+    /* Hacer que el panel derecho del formulario se fusione perfectamente sin parecer una caja azul */
+    .login-box, .form-container, .card, .panel, div[class*="right"], div[class*="form"] {
+        background-color: #090d16 !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    h1, h2, h3, h4, h5, h6, label, p, span, div {
+        color: #ffffff !important;
+    }
+    .text-muted, small {
+        color: #94a3b8 !important;
+    }
+    /* Inputs y selects oscuros limpios */
+    input[type='text'], input[type='email'], input[type='password'], select, textarea {
+        background-color: #111827 !important;
+        color: #ffffff !important;
+        border: 1px solid #1e293b !important;
+        border-radius: 6px !important;
+        padding: 10px !important;
+    }
+    input::placeholder {
+        color: #64748b !important;
+    }
+    input:focus, select:focus {
+        border-color: #ff2a4b !important;
+        outline: none !important;
+    }
+    /* Botón rojo carmesí */
+    button, input[type='submit'], .btn, .btn-primary {
+        background-color: #ff2a4b !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 6px !important;
+        font-weight: 700 !important;
+    }
+    button:hover, input[type='submit']:hover, .btn:hover {
+        background-color: #e01e3d !important;
+    }
+    a {
+        color: #ff2a4b !important;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+
+<style>
+    :root {
+        --bg-primary: #090d16 !important;
+        --bg-secondary: #111827 !important;
+        --accent-red: #ff2a4b !important;
+        --text-main: #ffffff !important;
+        --text-sub: #94a3b8 !important;
+        --border-color: #1e293b !important;
+    }
+    html, body, .wrapper, .main-container, div[class*="bg"], div[class*="container"] {
+        background-color: #090d16 !important;
+        background-image: none !important;
+        color: #ffffff !important;
+    }
+    header, nav, .navbar, .top-bar, .header {
+        background-color: #0d1321 !important;
+        border-bottom: 1px solid #1e293b !important;
+    }
+    .card, .panel, .form-container, .login-box, main {
+        background-color: #111827 !important;
+        border: 1px solid #1e293b !important;
+        box-shadow: none !important;
+    }
+    input, select, textarea {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        border: 1px solid #1e293b !important;
+        border-radius: 6px !important;
+    }
+    button, input[type="submit"], .btn, .btn-primary, .btn-danger, a[href*="logout"] {
+        background-color: #ff2a4b !important;
+        color: #ffffff !important;
+        border: none !important;
+        font-weight: 700 !important;
+        border-radius: 6px !important;
+    }
+    button:hover, .btn:hover, a[href*="logout"]:hover {
+        background-color: #e01e3d !important;
+    }
+    a {
+        color: #ff2a4b !important;
+    }
+</style>
+
+
+<style>
+    /* Fondo general oscuro */
+    html, body {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        font-family: system-ui, -apple-system, sans-serif !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* BARRA SUPERIOR (HEADER/NAVBAR) - Forzar modo oscuro elegante */
+    header, nav, .navbar, .top-bar, .header, div[class*="header"], div[class*="nav"] {
+        background-color: #0d1321 !important;
+        background-image: none !important;
+        border-bottom: 1px solid #1e293b !important;
+        color: #ffffff !important;
+    }
+
+    /* Textos en la barra superior */
+    header *, nav *, .navbar *, .top-bar * {
+        color: #ffffff !important;
+    }
+
+    /* Reemplazar la imagen del sol/árboles en la columna izquierda por CESPED.jpg */
+    .left-panel, .hero-section, div[class*="left"], div[class*="side"], div[style*="background-image"] {
+        background-image: url('https://raw.githubusercontent.com/AcidCaos/socialemperors/main/assets/images_new/CESPED.jpg') !important;
+        background-size: cover !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+
+    /* Contenedores de formularios derechos oscuros sin cajas raras */
+    .login-box, .form-container, .card, .panel, div[class*="right"], div[class*="form"] {
+        background-color: #090d16 !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Inputs y Selects */
+    input[type='text'], input[type='email'], input[type='password'], select, textarea {
+        background-color: #111827 !important;
+        color: #ffffff !important;
+        border: 1px solid #1e293b !important;
+        border-radius: 6px !important;
+    }
+
+    /* Botón de acción principal */
+    button, input[type='submit'], .btn-primary, .btn-danger, a[href*="logout"] {
+        background-color: #ff2a4b !important;
+        color: #ffffff !important;
+        border: none !important;
+        font-weight: 700 !important;
+    }
+
+    /* Invertir el logo blanco sobre la cabecera oscura si es muy oscuro */
+    .navbar img, header img {
+        filter: brightness(1.2) !important;
+    }
+</style>
+
 </head>
 <body>
+
+<a href="http://169.58.149.57:80/" style="
+    position: fixed;
+    top: 18px;
+    left: 20px;
+    z-index: 999999;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: system-ui, sans-serif;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+" onmouseover="this.style.color='#ff2a4b';" onmouseout="this.style.color='#94a3b8';">
+    &#8592; Retro Point
+</a>
+
+
+
+
 
     <div class="split-container">
         <!-- MITAD IZQUIERDA: IMAGEN GRANDE -->

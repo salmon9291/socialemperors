@@ -2815,3 +2815,99 @@ def cmd_survival_end(player, cmd, args, gameversion, last_town_id):
 			add_store_item(_map, item, prize_items[item])
 
 	return True
+# ============================================
+# SISTEMA DE AMIGOS
+# ============================================
+from friends_system import add_friend, remove_friend, send_friend_request, accept_friend_request, reject_friend_request, get_friends_list, get_friend_requests, is_friend, get_friends_info
+
+def cmd_add_friend(player, cmd, args, gameversion, last_town_id):
+	# friend_userid
+	friend_userid = args[0]
+	if add_friend(player["playerInfo"]["pid"], friend_userid):
+		return True
+	return False
+
+def cmd_remove_friend(player, cmd, args, gameversion, last_town_id):
+	# friend_userid
+	friend_userid = args[0]
+	if remove_friend(player["playerInfo"]["pid"], friend_userid):
+		return True
+	return False
+
+def cmd_send_friend_request(player, cmd, args, gameversion, last_town_id):
+	# target_userid
+	target_userid = args[0]
+	if send_friend_request(player["playerInfo"]["pid"], target_userid):
+		return True
+	return False
+
+def cmd_accept_friend_request(player, cmd, args, gameversion, last_town_id):
+	# requester_userid
+	requester_userid = args[0]
+	if accept_friend_request(player["playerInfo"]["pid"], requester_userid):
+		return True
+	return False
+
+def cmd_reject_friend_request(player, cmd, args, gameversion, last_town_id):
+	# requester_userid
+	requester_userid = args[0]
+	if reject_friend_request(player["playerInfo"]["pid"], requester_userid):
+		return True
+	return False
+
+def cmd_get_friends_list(player, cmd, args, gameversion, last_town_id):
+	# Sin argumentos
+	friends = get_friends_list(player["playerInfo"]["pid"])
+	log.info(f"Friends list for {player['playerInfo']['name']}: {friends}")
+	return True
+
+def cmd_get_friend_requests(player, cmd, args, gameversion, last_town_id):
+	# Sin argumentos
+	requests = get_friend_requests(player["playerInfo"]["pid"])
+	log.info(f"Friend requests for {player['playerInfo']['name']}: {requests}")
+	return True
+
+# ============================================
+# SISTEMA DE AMIGOS
+# ============================================
+from friends_system import add_friend, remove_friend, send_friend_request, accept_friend_request, reject_friend_request, get_friends_list, get_friend_requests
+
+def cmd_add_friend(player, cmd, args, gameversion, last_town_id):
+    friend_userid = args[0]
+    if add_friend(player["playerInfo"]["pid"], friend_userid):
+        return True
+    return False
+
+def cmd_remove_friend(player, cmd, args, gameversion, last_town_id):
+    friend_userid = args[0]
+    if remove_friend(player["playerInfo"]["pid"], friend_userid):
+        return True
+    return False
+
+def cmd_send_friend_request(player, cmd, args, gameversion, last_town_id):
+    target_userid = args[0]
+    if send_friend_request(player["playerInfo"]["pid"], target_userid):
+        return True
+    return False
+
+def cmd_accept_friend_request(player, cmd, args, gameversion, last_town_id):
+    requester_userid = args[0]
+    if accept_friend_request(player["playerInfo"]["pid"], requester_userid):
+        return True
+    return False
+
+def cmd_reject_friend_request(player, cmd, args, gameversion, last_town_id):
+    requester_userid = args[0]
+    if reject_friend_request(player["playerInfo"]["pid"], requester_userid):
+        return True
+    return False
+
+def cmd_get_friends_list(player, cmd, args, gameversion, last_town_id):
+    friends = get_friends_list(player["playerInfo"]["pid"])
+    log.info(f"Friends list for {player['playerInfo']['name']}: {friends}")
+    return True
+
+def cmd_get_friend_requests(player, cmd, args, gameversion, last_town_id):
+    requests = get_friend_requests(player["playerInfo"]["pid"])
+    log.info(f"Friend requests for {player['playerInfo']['name']}: {requests}")
+    return True

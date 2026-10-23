@@ -1,157 +1,338 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <!-- Meta -->
-    <meta charset="utf-8"/>
-    <!-- Title and Icon -->
-    <title id="pageTitle">Social Empires</title>
-    <link rel="shortcut icon" href="/img/icon.gif"/>
-    <link rel="icon" type="image/png" href="/img/icon.gif"/>
-    <script src="/js/external_interface.js"></script>
-    <script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5756611551910131" crossorigin="anonymous"></script>
+	<head>
+		<!-- Meta -->
+		<meta charset="utf-8"/>
+		<!-- Title and Icon -->
+		<title id="pageTitle">Social Empires</title>
+		<link rel="shortcut icon" href="/img/icon.gif"/>
+		<link rel="icon" type="image/png" href="/img/icon.gif"/>
+		<script src="/js/external_interface.js"></script>
+		<script src="https://unpkg.com/@ruffle-rs/ruffle/ruffle.js"></script>
+		<!--<script src="https://cdn.jsdelivr.net/npm/@ruffle-rs/ruffle/ruffle.js"></script>-->
+	
+<style>
+    /* Forzar modo oscuro absoluto y paleta Retro Point */
+    body, html {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    }
+    header, nav, .navbar, .top-bar {
+        background-color: #0d1321 !important;
+        border-bottom: 1px solid #1e293b !important;
+    }
+    h1, h2, h3, h4, h5, h6, p, span, label, div {
+        color: #ffffff !important;
+    }
+    .text-muted, small, .subtitle {
+        color: #94a3b8 !important;
+    }
+    /* Tarjetas y contenedores */
+    .card, .panel, .box, .container, .modal-content {
+        background-color: #111827 !important;
+        border: 1px solid #1e293b !important;
+    }
+    /* Inputs, selects y áreas de texto oscuras */
+    input[type='text'], input[type='email'], input[type='password'], select, textarea {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        border: 1px solid #1e293b !important;
+    }
+    input::placeholder, textarea::placeholder {
+        color: #64748b !important;
+    }
+    input:focus, select:focus, textarea:focus {
+        border-color: #ff2a4b !important;
+        outline: none !important;
+    }
+    /* Botones principales en rojo carmesí */
+    button, input[type='submit'], .btn, .btn-primary, .btn-warning {
+        background-color: #ff2a4b !important;
+        background-image: none !important;
+        color: #ffffff !important;
+        border: none !important;
+        font-weight: 700 !important;
+    }
+    button:hover, input[type='submit']:hover, .btn:hover, .btn-primary:hover, .btn-warning:hover {
+        background-color: #e01e3d !important;
+    }
+    a {
+        color: #ff2a4b !important;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
 
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            background-color: #669C2C;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+<style>
+    /* Forzar modo oscuro absoluto y paleta Retro Point */
+    body, html {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    }
+    header, nav, .navbar, .top-bar {
+        background-color: #0d1321 !important;
+        border-bottom: 1px solid #1e293b !important;
+    }
+    h1, h2, h3, h4, h5, h6, p, span, label, div {
+        color: #ffffff !important;
+    }
+    .text-muted, small, .subtitle {
+        color: #94a3b8 !important;
+    }
+    /* Tarjetas y contenedores */
+    .card, .panel, .box, .container, .modal-content {
+        background-color: #111827 !important;
+        border: 1px solid #1e293b !important;
+    }
+    /* Inputs, selects y áreas de texto oscuras (Corrección de Contraste) */
+    input[type='text'], input[type='email'], input[type='password'], select, textarea {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        border: 1px solid #1e293b !important;
+    }
+    input::placeholder, textarea::placeholder {
+        color: #64748b !important;
+    }
+    input:focus, select:focus, textarea:focus {
+        border-color: #ff2a4b !important;
+        outline: none !important;
+    }
+    /* Botones principales en rojo carmesí */
+    button, input[type='submit'], .btn, .btn-primary, .btn-warning {
+        background-color: #ff2a4b !important;
+        background-image: none !important;
+        color: #ffffff !important;
+        border: none !important;
+        font-weight: 700 !important;
+    }
+    button:hover, input[type='submit']:hover, .btn:hover, .btn-primary:hover, .btn-warning:hover {
+        background-color: #e01e3d !important;
+    }
+    /* Botón Cerrar sesión (específico) */
+    #logout-button, a[href*="logout"] {
+        background-color: #ff2a4b !important;
+        color: #ffffff !important;
+    }
+    #logout-button:hover, a[href*="logout"]:hover {
+        background-color: #e01e3d !important;
+    }
+    a {
+        color: #ff2a4b !important;
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    /* Forzar que el logotipo de Social Empires sea oscuro */
+    img[src*="logo"], .logo-img {
+        filter: brightness(0.7) contrast(1.2) !important;
+    }
+</style>
 
-        /* Barra flotante únicamente para el botón de Logout */
-        .top-navbar {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-        }
 
-        .logout-btn {
-            background-color: rgba(211, 47, 47, 0.9);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 13px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: background-color 0.3s, transform 0.1s;
-            backdrop-filter: blur(4px);
-        }
+<style>
+    /* 1. Fondo oscuro global de Retro Point */
+    body, html {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        font-family: system-ui, -apple-system, sans-serif !important;
+    }
 
-        .logout-btn:hover {
-            background-color: #b71c1c;
-            transform: scale(1.05);
-        }
+    /* 2. Ocultar o adaptar el panel/fondo verde brillante original */
+    .left-panel, .hero-section, div[class*="left"], div[class*="bg-"] {
+        background-color: #090d16 !important;
+    }
 
-        /* Contenedor principal centrado */
-        .flash-container {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #669C2C;
-        }
+    /* 3. Panel de formulario en tono oscuro */
+    .login-box, .form-container, .card, .panel, main, div[class*="right"], div[class*="form"] {
+        background-color: #111827 !important;
+        color: #ffffff !important;
+    }
 
-        /* Mantiene la proporción exacta 760x530 sin estirar */
-        #ruffle {
-            aspect-ratio: 760 / 530;
-            width: 100%;
-            height: 100%;
-            max-width: calc(100vh * (760 / 530));
-            max-height: calc(100vw * (530 / 760));
-        }
+    /* 4. Textos legibles en blanco y gris suave */
+    h1, h2, h3, h4, h5, h6, label, p, span, div, td, th {
+        color: #ffffff !important;
+    }
+    .text-muted, small, p[style*="color"] {
+        color: #94a3b8 !important;
+    }
 
-        ruffle-embed, ruffle-player {
-            width: 100% !important;
-            height: 100% !important;
-        }
-    </style>
+    /* 5. Inputs y Selects oscuros con texto blanco nítido */
+    input[type='text'], input[type='email'], input[type='password'], select, textarea {
+        background-color: #090d16 !important;
+        color: #ffffff !important;
+        border: 1px solid #1e293b !important;
+        border-radius: 6px !important;
+        padding: 10px !important;
+    }
+    input::placeholder {
+        color: #64748b !important;
+    }
+    input:focus, select:focus {
+        border-color: #ff2a4b !important;
+        outline: none !important;
+    }
+
+    /* 6. Botones principales en rojo carmesí de Retro Point */
+    button, input[type='submit'], .btn, .btn-primary, .btn-warning {
+        background-color: #ff2a4b !important;
+        background-image: none !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 6px !important;
+        font-weight: 700 !important;
+        box-shadow: none !important;
+    }
+    button:hover, input[type='submit']:hover, .btn:hover, .btn-primary:hover, .btn-warning:hover {
+        background-color: #e01e3d !important;
+    }
+
+    /* 7. Enlaces */
+    a {
+        color: #ff2a4b !important;
+    }
+</style>
+
 </head>
-<body>
+	<body style="font-family: 'lucida grande',tahoma,verdana,arial,sans-serif">
+	<center>
+		<!-- SESSION HEADER -->
+		<div id="header" style="width: 760px; margin-top: 50px;">
+			<div id="session" style="float: right;">
+				<p style="display:inline">Logged in as <b>{{save_info.name}}</b> lvl {{save_info.level}} (<a href="/">logout</a>)</p>
+			</div>
+		</div>
+		<br>
+		<!-- GAME BAR -->
+		<div id="gameBar" style="margin-top: 15px;">
+			<!-- GAME BAR TOP -->
+			<div id="gamebar_top" style="width: 760px; height: 90px;">
+				<div style="float: left; margin-left:155px; padding: 4px; font-size: 10pt">
+					<!-- VERSION -->
+					<br><br><br>
+					<p style="display: inline">{{ version }}</p>
+				</div>
+			</div>
+			<!-- GAME BAR BUTTONS -->
+			<div id="gamebar_buttons" style="width: 760px;">
+				&nbsp;
+				<a class="gameBarButton" href="#"><div><img src="/img/gift.png">Free Gifts</div></a>
+				<a class="gameBarButton gameBarButtonSelected" href="#"><div><img>Play</div></a>
+				<a class="gameBarButton" href="#"><div><img src="/img/cash.png">Get Cash</div></a>
+				<a class="gameBarButton" href="https://discord.gg/zW5gSbQJBw" target="_blank"><div><img src="/img/discord.png">Discord</div></a>
+				<a class="gameBarButton" href="https://github.com/AcidCaos/socialemperors#readme" target="_blank"><div><img src="/img/github.png">GitHub</div></a>
+			</div>
+			<style>
+				#gameBar {
+					text-align: left;
+					width: 760px;
+					margin-bottom: 0px;
+					padding: 0px;
+					background-color: rgb(137, 187, 15);
+					background-image: url('/img/Gamebar_byTrevo.png');
+					background-repeat: no-repeat;
+					background-size: contain;
+					border-bottom: solid #6e5335 3px;
+				}
+				.gameBarButton {
+					display: inline-block;
+					height: 19px;
+					color: black;
+					border: solid 1.5px;
+					border-color: #9e7747;
+					background-color:rgb(255, 245, 131);
+					border-top-left-radius: 5px;
+					border-top-right-radius: 5px;
+					cursor: pointer;
+					text-decoration: none;
+					font-size: 11pt;
+					padding: 2px 3px 1px 3px; 
+				}
 
-    <!-- BOTÓN CERRAR SESIÓN FLOTANTE -->
-    <div class="top-navbar">
-        <a href="/" class="logout-btn">Logout</a>
-    </div>
+				.gameBarButtonSelected {
+					background-color:rgb(233, 221, 81);
+				}
 
-    <!-- EMBED GAME RUFFLE -->
-    <div class="flash-container">
-        <div id='ruffle'></div>
-        <script>
-            window.RufflePlayer = window.RufflePlayer || {};
-            window.RufflePlayer.config = {
-                letterbox: "on",
-                scale: "showAll",
-                forceScale: true,
-                preferredRenderer: "canvas",
-                wmode: "opaque"
-            };
+				.gameBarButton img {
+					height: 17px;
+					padding-right: 3px;
+					vertical-align: middle;
+				}
 
-            var ruffle = window.RufflePlayer.newest(),
-            player = Object.assign(document.getElementById("ruffle").appendChild(ruffle.createPlayer()), {
-                width: "100%",
-                height: "100%",
-                style: 'width: 100%; height: 100%; background-color: #669C2C;',
-            });
-            player.load({ 
-                url: "http://" + window.location.hostname + ":{{PORT}}/default01.static.socialpointgames.com/static/socialempires/flash/SELoader.swf?swftoload=http://" + window.location.hostname + ":{{PORT}}/default01.static.socialpointgames.com/static/socialempires/flash/{{GAMEVERSION}}",
-                backgroundColor: "#669C2C",
-                allowScriptAccess: false,
-                autoplay: true,
+				.gameBarButton:hover {
+					background-color:rgb(250, 237, 90);
+					text-decoration: none;
+				}
 
-                parameters: 'spdebug=notnull&brk=0' +
-                    '&staticUrl=http://' + window.location.hostname + ':{{PORT}}/default01.static.socialpointgames.com/static/socialempires/&brk=0' +
-                    '&dynamicUrl=http://' + window.location.hostname + ':{{PORT}}/dynamic.flash1.dev.socialpoint.es/appsfb/socialempiresdev/srvempires/&brk=0' +
-                    '&skiphash12341=notnull&brk=0' +
-                    '&fb_sig_user={{save_info.userid}}&brk=0' +
-                    '&user_key=123456789&brk=0' +
-                    '&language=en&brk=0' +
-                    '&accessToken=AAABbZAm0wdMUBALsOrR0Ho68CLjaOT8SV3vftKg9mbo1zZColaW5FljRVaLxPGxXXnm1M98mTZCAttcQ4GHwvSyXfsyxYmvKMH8Hmn5iliSPnjvIsZA6&brk=0' +
-                    '&sex=m&brk=0' +
-                    '&lastLoggedIn={{save_info.last_logged_in}}&brk=0' +
-                    '&dailyBonus=0&brk=0' +
-                    '&friendsInfo={{friendsInfo | tojson}}&brk=0' +
-                    '&serverTime={{serverTime}}&brk=0' +
-                    '&forceSyncError=1&brk=0' +
-                    '&forceAttackReload=0&brk=0' +
-                    '&forceQuestReload=0&brk=0' +
-                    '&mantenimiento=N&brk=0' +
-                    '&fb_sig_friends=&brk=0' +
-                    '&debugResources=1&brk=0' +
-                    '&bookmarked=&brk=0' +
-                    '&publishActions=1&brk=0' +
-                    '&like=0&brk=0' +
-                    '&lastInviteSend=0&brk=0' +
-                    '&recentRequests=%7B%7D&brk=0' +
-                    '&goldmember=0&brk=0' +
-                    '&sp_ref_cat=unknown&brk=0' +
-                    '&daysSinceRegistration=0&brk=0' +
-                    '&push_time=30&brk=0' +
-                    '&gamecrosspromo=DCI&brk=0' +
-                    '&adVideo=0&brk=0' +
-                    '&timeZone=0&brk=0' +
-                    '&showInitialInvite=false&brk=0' +
-                    '&game_status=3024-lev&brk=0' +
-                    '{% if offers %}&offer_type=0&brk=0' +
-                    '&offerBuildingTracking=false&brk=0' +
-                    '&offerBuilding=false&brk=0' +
-                    '{% endif %}&squirrel=0&brk=0' +
-                    '&inviteTournament=0&brk=0' +
-                    '&canvasaddress=http%3A%2F%2F' + window.location.hostname + '%3A{{PORT}}%2Fplay&brk=0'
-            });
-        </script>
-    </div>
-</body>
+				.gameBarButtonSelected:hover {
+					background-color:rgb(223, 212, 82);
+				}
+
+			</style>
+		</div>
+		<!-- EMBED GAME -->
+		<object>
+			<div id='ruffle'></div>
+			<script>
+				var ruffle = window.RufflePlayer.newest(),
+				player = Object.assign(document.getElementById("ruffle").appendChild(ruffle.createPlayer()), {
+					width: 760,
+					height: 600,
+					style: 'width: 760px; height: 600px; background-color: #669C2C;',
+				});
+				player.load({ // https://ruffle.rs/js-docs/master/interfaces/URLLoadOptions.html
+					url: "http://{{SERVERIP}}:{{PORT}}/default01.static.socialpointgames.com/static/socialempires/flash/SELoader.swf?swftoload=http://{{SERVERIP}}:{{PORT}}/default01.static.socialpointgames.com/static/socialempires/flash/{{GAMEVERSION}}",
+					backgroundColor: "#669C2C",
+					allowScriptAccess: false,
+					autoplay: true,
+					
+					parameters: 'spdebug=notnull&brk=0\
+						&staticUrl=http://{{SERVERIP}}:{{PORT}}/default01.static.socialpointgames.com/static/socialempires/&brk=0\
+						&dynamicUrl=http://{{SERVERIP}}:{{PORT}}/dynamic.flash1.dev.socialpoint.es/appsfb/socialempiresdev/srvempires/&brk=0\
+						&skiphash12341=notnull&brk=0\
+						&fb_sig_user={{save_info.userid}}&brk=0\
+						&user_key=123456789&brk=0\
+						&language=en&brk=0\
+						&accessToken=AAABbZAm0wdMUBALsOrR0Ho68CLjaOT8SV3vftKg9mbo1zZColaW5FljRVaLxPGxXXnm1M98mTZCAttcQ4GHwvSyXfsyxYmvKMH8Hmn5iliSPnjvIsZA6&brk=0\
+						&sex=m&brk=0\
+						&lastLoggedIn={{save_info.last_logged_in}}&brk=0\
+						&dailyBonus=0&brk=0\
+						&friendsInfo={{friendsInfo | tojson}}&brk=0\
+						&serverTime={{serverTime}}&brk=0\
+						&forceSyncError=1&brk=0\
+						&forceAttackReload=0&brk=0\
+						&forceQuestReload=0&brk=0\
+						&mantenimiento=N&brk=0\
+						&fb_sig_friends=&brk=0\
+						&debugResources=1&brk=0\
+						&bookmarked=&brk=0\
+						&publishActions=1&brk=0\
+						&like=0&brk=0\
+						&lastInviteSend=0&brk=0\
+						&recentRequests=%7B%7D&brk=0\
+						&goldmember=0&brk=0\
+						&sp_ref_cat=unknown&brk=0\
+						&daysSinceRegistration=0&brk=0\
+						&push_time=30&brk=0\
+						&gamecrosspromo=DCI&brk=0\
+						&adVideo=0&brk=0\
+						&timeZone=0&brk=0\
+						&showInitialInvite=false&brk=0\
+						&game_status=3024-lev&brk=0\
+						{% if offers %}&offer_type=0&brk=0\
+						&offerBuildingTracking=false&brk=0\
+						&offerBuilding=false&brk=0\
+						{% endif %}&squirrel=0&brk=0\
+						&inviteTournament=0&brk=0\
+						&canvasaddress=http%3A%2F%2F{{SERVERIP}}%3A{{PORT}}%2Fplay&brk=0'
+					});
+			</script>
+		</object>
+	</center>
+	</body>
 </html>

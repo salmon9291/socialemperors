@@ -817,7 +817,7 @@ def neighbor_data(player, town_id = 0):
 		"name": playerInfo["name"],
 		"level": _map["level"],
 		"xp": _map["xp"],
-		"world_id": playerInfo["world_id"]
+		"world_id": playerInfo.get("world_id", None)
 	}
 
 # Check for valid village

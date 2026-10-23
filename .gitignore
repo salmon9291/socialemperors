@@ -16,4 +16,6 @@ download_assets/
 Include/
 Lib/
 Scripts/
-pyvenv.cfg
+pyvenv.cfgvenv/
+venv/
+accounts.json
